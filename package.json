@@ -17,5 +17,14 @@
     "eslint-plugin-prettier": "^5.3.1",
     "nodemon": "^3.1.10",
     "prettier": "^3.5.3"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.7.0",
+    "@hapi/boom": "^10.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
