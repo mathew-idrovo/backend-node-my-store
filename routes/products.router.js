@@ -1,14 +1,13 @@
 const express = require('express');
 
 const ProductService = require('../services/product.service');
-const { ro } = require('@faker-js/faker');
 
 const router = express.Router();
 const service = new ProductService();
 
 router.get('/', async (req, res) => {
   try {
-    const products = await service.find();
+    const products = await service.find(req.query);
     res.json(products);
   } catch (error) {
     res.status(500).json({ message: 'Internal Server Error' });
