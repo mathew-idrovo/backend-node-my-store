@@ -10,7 +10,8 @@ const config = {
     dbName: process.env.DB_NAME,
     dbPort: process.env.DB_PORT,
     dialect: 'postgres',
+    jwtSecret: process.env.JWT_SECRET,
   },
 };
-console.log('[CONFIG]', config);
+
 module.exports = { config };

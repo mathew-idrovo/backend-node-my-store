@@ -5,7 +5,8 @@
     "database": "my_store",
     "host": "localhost",
     "port": 5432,
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "JWT_SECRET": "c195c6e375505a8172aba1fd0bf2605ec25736a4c63acd4941029c6de0ab7e8e2bf41b45552bc260b24bc310e09a26e29554958f4581d48eb1e3882c378c2dc2"
   },
   "test": {
     "username": "matt",
