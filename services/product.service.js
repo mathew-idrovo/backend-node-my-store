@@ -4,30 +4,16 @@ const { models } = require('../libs/sequelize');
 class ProductService {
   constructor() {
     this.products = [];
-    this.generate();
   }
-  generate() {
-    const limit = 100;
-    for (let i = 0; i < limit; i++) {
-      this.products.push({
-        id: faker.string.uuid(),
-        name: faker.commerce.productName(),
-        price: parseInt(faker.commerce.price(), 10),
-        image: faker.image.urlPicsumPhotos(),
-        isBlock: faker.datatype.boolean(),
-      });
-    }
-  }
+
   async create(data) {
-    const newProduct = {
-      id: faker.string.uuid(),
-      ...data,
-    };
-    this.products.push(newProduct);
+    const newProduct = await models.Product.create(data);
     return newProduct;
   }
   async find() {
-    const products = await models.Product.findAll();
+    const products = await models.Product.findAll({
+      include: ['category'],
+    });
     return products;
   }
   async findOne(id) {
