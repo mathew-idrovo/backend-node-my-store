@@ -9,7 +9,7 @@ const HOST = process.env.DB_HOST;
 const PORT = process.env.DB_PORT;
 const DB = process.env.DB_NAME;
 
-const URI = `postgres://${USER}:${PASSWORD}@${HOST}:${PORT}/${DB}`;
+const DATABASE_URL = `postgres://${USER}:${PASSWORD}@${HOST}:${PORT}/${DB}`;
 const options = {
   dialect: 'postgres',
   logging: config.isProd ? false : true,
@@ -21,7 +21,7 @@ if (config.isProd) {
     },
   };
 }
-const sequelize = new Sequelize(URI, options);
+const sequelize = new Sequelize(DATABASE_URL, options);
 setupModels(sequelize);
 
 module.exports = sequelize;

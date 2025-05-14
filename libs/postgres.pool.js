@@ -11,8 +11,8 @@ if (config.isProd) {
 } else {
   const USER = encodeURIComponent(config.dbUser);
   const PASSWORD = encodeURIComponent(config.dbPassword);
-  const URI = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
-  options.connectionString = URI;
+  const DATABASE_URL = `postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${config.dbName}`;
+  options.connectionString = DATABASE_URL;
 }
 
 const pool = new Pool(options);
