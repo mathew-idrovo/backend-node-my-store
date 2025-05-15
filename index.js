@@ -13,6 +13,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
+app.use(cors());
 require('./utils/index');
 
 app.get('/', (req, res) => {
@@ -24,7 +25,6 @@ app.get('/nueva-ruta', (req, res) => {
 });
 
 routerApi(app);
-
 app.use(logErrors);
 app.use(boomErrorHandler);
 app.use(errorHandler);
